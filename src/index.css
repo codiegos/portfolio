@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hamburger div:first-child {
+    @apply rotate-45 translate-y-1.5;
+  }
+  .hamburger div:last-child {
+    @apply -rotate-45 -translate-y-1;
+  }
+
+}
+
+/* .waviy span {
+  animation: waviy 1s;  
+  display: inline-block;
+  animation-delay: calc(130ms * var(--letter));
+} */
