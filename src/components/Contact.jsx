@@ -22,7 +22,7 @@ const Contact = ({ englishTranslate }) => {
     toast(toastMessage || "Correo copiado en el portapapeles!", {
       position: toast.POSITION.BOTTOM_RIGHT,
       className:
-        "dark:bg-slate-900 dark:text-white rounded-sm border border-sky-400",
+        "dark:bg-slate-900 dark:text-white rounded-sm border border-sky-400 sm:mb-24",
     });
     handlePaperPlaneClick();
   };
@@ -63,6 +63,8 @@ const Contact = ({ englishTranslate }) => {
                   autoClose={1800}
                   pauseOnFocusLoss={false}
                   pauseOnHover={false}
+                  closeButton={{className:'text-white'}
+                  }
                 />
                 <img
                   src={gmailIcon}

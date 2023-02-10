@@ -31,7 +31,7 @@ const translationTexts = {
       "My contact networks:",
     toastMessage: "Email copied to clipboard!",
     footer:{
-      designed:"Designed by Diego Rivera",
+      designed:"Designed & Developed by Diego Rivera",
       repository:"Visit the GitHub repository"
     }
   },
