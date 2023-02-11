@@ -105,7 +105,7 @@ const Navbar = ({
                         onClick={() => setCloseMenu(!closeMenu)}
                         className="group relative cursor-pointer before:absolute before:inset-x-0 before:bottom-0 before:h-[6px] before:rounded-xl before:origin-right before:scale-x-0 before:bg-fuchsia-200 before:transition before:duration-300 hover:before:origin-left hover:before:scale-x-100 dark:before:bg-fuchsia-900"
                       >
-                        <span className="relative group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-400">
+                        <span className="relative group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-400 lg:text-base xl:text-xl">
                           {englishTranslate[i] || title}
                         </span>
                       </Link>
