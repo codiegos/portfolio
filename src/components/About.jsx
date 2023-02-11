@@ -4,16 +4,16 @@ import mario from "../assets/images/mario.gif";
 
 const About = ({ englishTranslate }) => {
   return (
-
-      <div className="-mt-8 min-[376px]:mt-0 min-[376px]:text-xl sm:text-2xl lg:text-3xl">
-        <div className="flex justify-center items-center text-3xl sm:text-5xl pt-2 lg:text-6xl lg:pb-12">
-          <Fade cascade duration={185}>
-            {englishTranslate.title || "¡Hola!"}
-          </Fade>
-          <span className="inline-block animate-wave">🖐️</span>
-        </div>
+    <div className=" h-full flex flex-col justify-center">
+      <h1 className="text-center text-4xl sm:text-5xl">
+        <Fade cascade duration={185}>
+          {englishTranslate.title || "¡Hola!"}
+        </Fade>
+        <span className="inline-block animate-wave">🖐️</span>
+      </h1>
+      <div className="xs:text-xl sm:text-2xl lg:text-3xl flex flex-col justify-center gap-y-2 xs:py-6 lg:py-0 xl:py-12">
         <Fade
-          className="my-4 bg-gradient-to-b from-fuchsia-50 to-blue-50 from- py-8 px-8 border rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-right-bottom dark:border-gray-700 text-justify"
+          className=" bg-gradient-to-b from-fuchsia-50 to-blue-50  p-4 md:p-8 border rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-right-bottom dark:border-gray-700 text-justify"
           direction="left"
           duration={1500}
         >
@@ -24,31 +24,32 @@ const About = ({ englishTranslate }) => {
           </p>
         </Fade>
         <Fade
-          className="my-4 bg-gradient-to-r from-fuchsia-50 to-blue-50  py-8 px-8 border rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-center dark:border-gray-700"
+          className="bg-gradient-to-r from-fuchsia-50 to-blue-50 p-4 md:p-8 border rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-center dark:border-gray-700 text-justify"
           duration={1850}
           direction="left"
         >
-          <p className="text-justify">
+          <p>
             {englishTranslate.howIm ||
               "Me considero tolerante y flexible, me adecúo a los nuevos ambientes y me siento cómodo trabajando en diferentes modalidades"}
             .
           </p>
         </Fade>
         <Fade direction="left" duration={2000}>
-          <div className="hidden min-[281px]:flex items-center justify-between sm:justify-evenly border p-8 bg-gradient-to-t from-fuchsia-50 to-blue-50 rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-left-bottom dark:border-gray-700">
-            <p className="text-justify">
+          <div className="hidden min-[281px]:flex items-center justify-between sm:justify-evenly border p-4 bg-gradient-to-t from-fuchsia-50 to-blue-50 rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-left-bottom dark:border-gray-700">
+            <p>
               {englishTranslate.hobbie ||
                 "Suelo jugar videojuegos en mis tiempos libres e intento aprender programación e inglés todos los días"}
               .
             </p>
             <img
-              className="hidden min-[281px]:inline-block animate-bounce duration-75 h-24 w-24"
+              className="animate-bounce duration-75 h-24 w-24"
               src={mario}
               alt="supermario3-fly"
             />
           </div>
         </Fade>
       </div>
+    </div>
   );
 };
 

@@ -5,23 +5,21 @@ import gridIcons from "../utils/skillsIcons";
 const Skills = ({ englishTranslateSkills }) => {
   const { title, subtitle } = englishTranslateSkills;
   return (
-    <>
-      <div className="flex flex-col gap-y-6 text-center">
-        <Fade
-          className="text-3xl sm:text-5xl after:content-['🛠️']"
-          cascade
-          duration={185}
-        >
-          {title || "Habilidades"}
-        </Fade>
-        <div className="hidden xl:inline-block text-xl sm:text-3xl">
+    <div className="h-full flex flex-col justify-center">
+      <div className="text-center text-4xl sm:text-5xl">
+        <h1 className="after:content-['🛠️']">
+          <Fade cascade duration={185}>
+            {title || "Habilidades"}
+          </Fade>
+        </h1>
+        <h2 className="hidden xl:inline-block text-3xl">
           <Fade cascade duration={60}>
             {subtitle ||
               "Tecnologías que he aplicado en trabajos Freelance y de universidad:"}
           </Fade>
-        </div>
+        </h2>
       </div>
-      <div className="container grid grid-cols-12 grid-rows-5 mx-auto place-items-center h-full pt-12 lg:px-32">
+      <div className="grid grid-cols-12 place-items-center py-4 xs:py-32 xl:py-12 gap-y-12 lg:py-24 xl:px-64">
         {gridIcons.map(({ icon, colSpan, alt, rotate }, i) => (
           <Fade
             className={`${colSpan}`}
@@ -37,7 +35,7 @@ const Skills = ({ englishTranslateSkills }) => {
           </Fade>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
