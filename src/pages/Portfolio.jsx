@@ -46,7 +46,7 @@ const Portfolio = () => {
         </section>
         <section
           id="about"
-          className="h-full px-2 pt-20 lg:pt-24 lg:px-36 min-[1820px]:px-96 dark:bg-slate-900 dark:text-white dark:selection:bg-indigo-200/25 duration-500"
+          className="h-full lg:px-36 min-[1820px]:px-96 dark:bg-slate-900 dark:text-white dark:selection:bg-indigo-200/25 duration-500"
         >
           <About
             englishTranslate={englishTranslate && translationTexts.about}
@@ -54,7 +54,7 @@ const Portfolio = () => {
         </section>
         <section
           id="skills"
-          className="h-full px-2 pt-20 bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40 lg:pt-24 lg:px-36 duration-500"
+          className="h-full bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40  duration-500"
         >
           <Skills
             englishTranslateSkills={englishTranslate && translationTexts.skills}
