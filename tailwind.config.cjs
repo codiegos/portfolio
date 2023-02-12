@@ -15,8 +15,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'linear-soft': "url('src/assets/images/background.webp')",
-        'linear-soft-dark': "url('src/assets/images/dark-background.webp')",
+        'linear-soft': "url('assets/images/background.webp')",
+        'linear-soft-dark': "url('assets/images/dark-background.webp')",
 
       },
       keyframes: {
