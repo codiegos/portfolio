@@ -35,7 +35,7 @@ const About = ({ englishTranslate }) => {
           </p>
         </Fade>
         <Fade direction="left" duration={2000}>
-          <div className="hidden min-[281px]:flex items-center justify-between sm:justify-evenly border p-4 bg-gradient-to-t from-fuchsia-50 to-blue-50 rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-left-bottom dark:border-gray-700">
+          <div className="hidden xs:flex items-center justify-between sm:justify-evenly border p-4 bg-gradient-to-t from-fuchsia-50 to-blue-50 rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-left-bottom dark:border-gray-700">
             <p>
               {englishTranslate.hobbie ||
                 "Suelo jugar videojuegos en mis tiempos libres e intento aprender programación e inglés todos los días"}

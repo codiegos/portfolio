@@ -14,7 +14,7 @@ const Home = ({ englishTranslateHome }) => {
             {"Diego Rivera"}
           </Fade>
           <Fade
-            className="text-2xl min-[281px]:text-3xl text-fuchsia-500"
+            className="text-2xl xs:text-3xl text-fuchsia-500"
             cascade
             duration={120}
           >
