@@ -70,7 +70,7 @@ const Contact = ({ englishTranslate }) => {
                     alt="gmail-icon"
                     className="h-32 w-full"
                   />
-                  <img src={clipboardIcon} alt="clipboard-icon" className="absolute h-8 w-12 top-0 right-3"/>
+                  <img src={clipboardIcon} alt="clipboard-icon" className="absolute h-8 w-12 top-0 -right-3"/>
                 </button>
               </Fade>
 
