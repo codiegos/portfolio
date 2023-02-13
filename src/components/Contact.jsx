@@ -3,6 +3,7 @@ import fastPaperPlane from "../assets/icons/paperplane-fast-icon.svg";
 import linkedInIcon from "../assets/icons/linkedin-icon.svg";
 import githubIcon from "../assets/icons/github-icon.svg";
 import gmailIcon from "../assets/icons/gmail-icon.svg";
+import clipboardIcon from "../assets/icons/clipboard-icon.svg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Fade } from "react-awesome-reveal";
@@ -29,8 +30,8 @@ const Contact = ({ englishTranslate }) => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center flex-grow h-full">
-        <div className="text-center text-4xl sm:text-5xl">
+      <div className="flex flex-col justify-center items-center flex-grow h-full relative">
+        <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
           <h1 className="after:content-['📫']">
             <Fade cascade duration={185}>
               {title || "Contacto"}
@@ -38,13 +39,12 @@ const Contact = ({ englishTranslate }) => {
           </h1>
           <h2 className="hidden xl:inline-block text-3xl">
             <Fade cascade duration={120}>
-              {subtitle ||
-                "Mis redes de contacto:"}
+              {subtitle || "Mis redes de contacto:"}
             </Fade>
           </h2>
         </div>
 
-        <div className="flex flex-col items-center justify-center py-4 xs:py-24 md:py-2 xl:py-4">
+        <div className="flex flex-col items-center justify-center pt-24 xl:pt-48">
           <div>
             <div className="flex justify-center items-center sm:gap-40">
               <Fade direction="left" duration={1500}>
@@ -63,12 +63,14 @@ const Contact = ({ englishTranslate }) => {
                 <button
                   onClick={handleGmailClick}
                   disabled={!animatePaperPlane}
+                  className="relative hover:scale-110 duration-100 cursor-pointer"
                 >
                   <img
                     src={gmailIcon}
                     alt="gmail-icon"
-                    className="h-32 w-32 mr-1 hover:scale-110 duration-100 cursor-pointer"
+                    className="h-32 w-full"
                   />
+                  <img src={clipboardIcon} alt="clipboard-icon" className="absolute h-8 w-12 top-0 right-3"/>
                 </button>
               </Fade>
 

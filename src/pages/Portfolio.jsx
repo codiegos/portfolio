@@ -27,7 +27,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className={`font-mono ${darkMode && "dark"}`}>
+    <div className={`font-mono  ${darkMode ? "dark" : ""}`}>
       <header>
         <Navbar
           toggleDarkMode={handleDarkMode}
@@ -35,10 +35,10 @@ const Portfolio = () => {
           toggleEnglishTranslate={setEnglishTranslate}
         />
       </header>
-      <main className="h-screen">
+      <main>
         <section
           id="home"
-          className="h-full bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed font-semibold shadow-sm dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40 duration-500"
+          className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed font-semibold shadow-sm dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40 duration-500"
         >
           <Home
             englishTranslateHome={englishTranslate && translationTexts.home}
@@ -46,7 +46,7 @@ const Portfolio = () => {
         </section>
         <section
           id="about"
-          className="h-full lg:px-36 min-[1820px]:px-96 dark:bg-slate-900 dark:text-white dark:selection:bg-indigo-200/25 duration-500"
+          className="h-screen lg:px-36 3xl:px-96 dark:bg-slate-900 dark:text-white dark:selection:bg-indigo-200/25 duration-500"
         >
           <About
             englishTranslate={englishTranslate && translationTexts.about}
@@ -54,7 +54,7 @@ const Portfolio = () => {
         </section>
         <section
           id="skills"
-          className="h-full bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40  duration-500"
+          className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40 duration-500"
         >
           <Skills
             englishTranslateSkills={englishTranslate && translationTexts.skills}
@@ -62,7 +62,7 @@ const Portfolio = () => {
         </section>
         <section
           id="projects"
-          className="h-full dark:text-white dark:bg-slate-900 dark:selection:bg-indigo-500/25 duration-500"
+          className="h-screen dark:text-white dark:bg-slate-900 dark:selection:bg-indigo-500/25 duration-500"
         >
           <Projects
             englishTranslate={englishTranslate && translationTexts.projects}
@@ -70,7 +70,7 @@ const Portfolio = () => {
         </section>
         <section
           id="contact"
-          className="h-full bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:text-white dark:bg-linear-soft-dark dark:selection:bg-indigo-500/40 duration-500"
+          className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:text-white dark:bg-linear-soft-dark dark:selection:bg-indigo-500/40 duration-500"
         >
           <div className="flex flex-col h-full">
             <Contact

@@ -4,16 +4,16 @@ import mario from "../assets/images/mario.gif";
 
 const About = ({ englishTranslate }) => {
   return (
-    <div className=" h-full flex flex-col justify-center">
-      <h1 className="text-center text-4xl sm:text-5xl">
+    <div className="h-full flex flex-col justify-center relative">
+      <h1 className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
         <Fade cascade duration={185}>
           {englishTranslate.title || "¡Hola!"}
         </Fade>
         <span className="inline-block animate-wave">🖐️</span>
       </h1>
-      <div className="xs:text-xl sm:text-2xl lg:text-3xl flex flex-col justify-center gap-y-2 xs:py-6 lg:py-0 xl:py-12">
+      <div className="xs:text-xl sm:text-2xl 3xl:text-3xl flex flex-col justify-center gap-y-2 pt-24">
         <Fade
-          className=" bg-gradient-to-b from-fuchsia-50 to-blue-50  p-4 md:p-8 border rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-right-bottom dark:border-gray-700 text-justify"
+          className=" bg-gradient-to-b from-fuchsia-50 to-blue-50 p-4 md:p-8 border rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-right-bottom dark:border-gray-700 text-justify"
           direction="left"
           duration={1500}
         >
