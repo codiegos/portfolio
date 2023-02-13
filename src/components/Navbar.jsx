@@ -16,31 +16,31 @@ const Navbar = ({
       key: "home",
       to: "home",
       title: "Inicio",
-      spy: true,
+      offset: -2,
     },
     {
       key: "about",
       to: "about",
       title: "Sobre mí",
-      spy: true,
+      offset: -2,
     },
     {
       key: "skills",
       to: "skills",
       title: "Habilidades",
-      spy: true,
+      offset: -2,
     },
     {
       key: "projects",
       to: "projects",
       title: "Proyectos",
-      spy: true,
+      offset: -1,
     },
     {
       key: "contact",
       to: "contact",
       title: "Contacto",
-      spy: true,
+      offset: -1,
     },
   ];
 
@@ -90,18 +90,15 @@ const Navbar = ({
             >
               <div className="flex flex-col h-full justify-between lg:items-center lg:flex-row">
                 <ul className="px-6 pt-32 text-gray-700 space-y-8 md:px-12 lg:space-y-0 lg:flex lg:space-x-12 lg:pt-0 dark:text-fuchsia-100 ">
-                  {navItems.map(({ key, to, spy, title }, i) => (
+                  {navItems.map(({ key, to, title, offset }, i) => (
                     <li key={key}>
                       <Link
-                        href="#"
                         activeStyle={{ color: "#C026D3" }}
+                        spy={true}
                         to={to}
-                        spy={spy} 
                         hashSpy
-                        duration={1100}
                         smooth
-                        value={title}
-                        autoFocus
+                        offset={offset}
                         onClick={() => setCloseMenu(!closeMenu)}
                         className="group relative cursor-pointer before:absolute before:inset-x-0 before:bottom-0 before:h-[6px] before:rounded-xl before:origin-right before:scale-x-0 before:bg-fuchsia-200 before:transition before:duration-300 hover:before:origin-left hover:before:scale-x-100 dark:before:bg-fuchsia-900"
                       >
