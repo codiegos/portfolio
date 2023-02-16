@@ -4,10 +4,11 @@ import handPointerIcon from "../assets/icons/hand-pointer-icon.svg";
 import { Fade } from "react-awesome-reveal";
 import Modal from "./Modal";
 import { useState } from "react";
+import { useEnglishTranslate } from "../hooks/useTranslate";
 
-const Projects = ({ englishTranslate }) => {
-  const { title, subtitle, turicuentro, djangoShop, repository } =
-    englishTranslate;
+const Projects = () => {
+  const { translateText } = useEnglishTranslate();
+  const { projects } = translateText;
   const [openModal, setOpenModal] = useState({
     id: null,
     visible: false,
@@ -15,32 +16,36 @@ const Projects = ({ englishTranslate }) => {
   });
 
   const turicuentroText =
-    turicuentro ||
+    projects?.turicuentro ||
     "Proyecto Freelance realizado con React, Material-UI y Expressjs utilizando el ORM Sequalize. Enfocado en la administración de reservas de cabañas con despliegue en un calendario. Contempla autenticación con JWT y módulos de reserva, cliente, cabaña y algunas configuraciones extras.";
 
   const djangoShopText =
-    djangoShop ||
+    projects?.djangoShop ||
     "En este proyecto de universidad utilicé Python, Bootstrap V5 y Django. Enfocado en la creación de un carrito de compras utilizando django sessions, también posee un apartado autenticado para la administración de productos e usuarios.";
 
-  const repositoryText = repository || "Ver repositorio";
+  const repositoryText = projects?.repository || "Ver repositorio";
 
   return (
     <div className="h-full flex flex-col justify-center relative">
       <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
         <h1 className="after:content-['💻']">
           <Fade cascade duration={185}>
-            {title || "Proyectos"}
+            {projects?.title || "Proyectos"}
           </Fade>
         </h1>
         <h2 className="hidden xl:inline-block text-3xl">
           <Fade cascade duration={70}>
-            {subtitle || "Algunos de mis proyectos destacados:"}
+            {projects?.subtitle || "Algunos de mis proyectos destacados:"}
           </Fade>
         </h2>
       </div>
 
       <div className="flex flex-col items-center justify-center text-xs lg:text-xl gap-y-6 lg:flex-row gap-x-4 pt-24 relative">
-        <Fade className="absolute z-10 top-0 mt-[84px] mr-4 animate-pulse" direction="left" duration={1750}>
+        <Fade
+          className="absolute z-10 top-0 mt-[84px] mr-4 animate-pulse"
+          direction="left"
+          duration={1750}
+        >
           <img
             src={handPointerIcon}
             alt="hand-pointer-icon"

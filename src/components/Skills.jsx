@@ -1,20 +1,22 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
+import { useEnglishTranslate } from "../hooks/useTranslate";
 import gridIcons from "../utils/skillsIcons";
 
-const Skills = ({ englishTranslateSkills }) => {
-  const { title, subtitle } = englishTranslateSkills;
+const Skills = () => {
+  const { translateText } = useEnglishTranslate();
+  const { skills } = translateText;
   return (
     <div className="h-full flex flex-col justify-center relative">
       <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
         <h1 className="after:content-['🛠️']">
           <Fade cascade duration={185}>
-            {title || "Habilidades"}
+            {skills?.title || "Habilidades"}
           </Fade>
         </h1>
         <h2 className="hidden xl:inline-block text-3xl">
           <Fade cascade duration={60}>
-            {subtitle ||
+            {skills?.subtitle ||
               "Tecnologías que he aplicado en trabajos Freelance y de universidad:"}
           </Fade>
         </h2>

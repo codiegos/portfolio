@@ -14,7 +14,6 @@ const translationTexts = {
   },
   skills: {
     title: "Skills",
-
     subtitle:
       "Technologies I have applied in freelance and university work:",
   },
@@ -24,6 +23,7 @@ const translationTexts = {
       "My featured projects:",
     turicuentro: "Freelance project made with React, Material UI and Expressjs using Sequalize ORM, Focalized into administration of cabin reservations displayed in a calendar. Including authentication using JWT and booking, customer, cabin and cabin configuration modules.",
     djangoShop: 'In this university project I used Python with Django Framework and Bootstrap5. This project, which focuses on the creation of a shopping cart using django sessions. It includes an authenticated section for product and user administration.',
+    repository:"See repository"
   },
   contact: {
     title: "Contact",
@@ -35,8 +35,6 @@ const translationTexts = {
       repository:"Visit the GitHub repository"
     }
   },
-
-
 };
 
 export default translationTexts;

@@ -7,10 +7,12 @@ import clipboardIcon from "../assets/icons/clipboard-icon.svg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Fade } from "react-awesome-reveal";
+import { useEnglishTranslate } from "../hooks/useTranslate";
 
-const Contact = ({ englishTranslate }) => {
+const Contact = () => {
   const [animatePaperPlane, setAnimatePaperPlane] = useState(true);
-  const { title, subtitle, toastMessage } = englishTranslate;
+  const { translateText } = useEnglishTranslate();
+  const { contact } = translateText;
 
   const handlePaperPlaneClick = () => {
     setAnimatePaperPlane(!animatePaperPlane);
@@ -20,10 +22,10 @@ const Contact = ({ englishTranslate }) => {
   };
   const handleGmailClick = () => {
     navigator.clipboard.writeText("diegosebsk@gmail.com");
-    toast(toastMessage || "Correo copiado en el portapapeles!", {
+    toast(contact?.toastMessage || "Correo copiado en el portapapeles!", {
       position: toast.POSITION.BOTTOM_RIGHT,
       className:
-        "dark:bg-slate-900 dark:text-white rounded-sm border border-sky-400 sm:mb-24",
+        "dark:bg-slate-900 dark:text-white rounded-sm border border-sky-400 sm:mb-20",
     });
     handlePaperPlaneClick();
   };
@@ -34,12 +36,12 @@ const Contact = ({ englishTranslate }) => {
         <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
           <h1 className="after:content-['📫']">
             <Fade cascade duration={185}>
-              {title || "Contacto"}
+              {contact?.title || "Contacto"}
             </Fade>
           </h1>
           <h2 className="hidden xl:inline-block text-3xl">
             <Fade cascade duration={120}>
-              {subtitle || "Mis redes de contacto:"}
+              {contact?.subtitle || "Mis redes de contacto:"}
             </Fade>
           </h2>
         </div>
@@ -70,7 +72,11 @@ const Contact = ({ englishTranslate }) => {
                     alt="gmail-icon"
                     className="h-32 w-full"
                   />
-                  <img src={clipboardIcon} alt="clipboard-icon" className="absolute h-8 w-12 top-0 -right-3"/>
+                  <img
+                    src={clipboardIcon}
+                    alt="clipboard-icon"
+                    className="absolute h-8 w-12 top-0 -right-3"
+                  />
                 </button>
               </Fade>
 

@@ -4,45 +4,42 @@ import logo from "../assets/icons/mylogo.svg";
 import spanishIcon from "../assets/icons/spanish-icon.svg";
 import englishIcon from "../assets/icons/english-icon.svg";
 import DarkModeButton from "../components/DarkModeButton";
-
-const Navbar = ({
-  toggleDarkMode,
-  englishTranslate,
-  toggleEnglishTranslate,
-}) => {
+import { useEnglishTranslate } from "../hooks/useTranslate";
+const navItems = [
+  {
+    key: "home",
+    to: "home",
+    title: "Inicio",
+    offset: -2,
+  },
+  {
+    key: "about",
+    to: "about",
+    title: "Sobre mí",
+    offset: -2,
+  },
+  {
+    key: "skills",
+    to: "skills",
+    title: "Habilidades",
+    offset: -2,
+  },
+  {
+    key: "projects",
+    to: "projects",
+    title: "Proyectos",
+    offset: -1,
+  },
+  {
+    key: "contact",
+    to: "contact",
+    title: "Contacto",
+    offset: -1,
+  },
+];
+const Navbar = ({ toggleDarkMode }) => {
   const [closeMenu, setCloseMenu] = useState(false);
-  const navItems = [
-    {
-      key: "home",
-      to: "home",
-      title: "Inicio",
-      offset: -2,
-    },
-    {
-      key: "about",
-      to: "about",
-      title: "Sobre mí",
-      offset: -2,
-    },
-    {
-      key: "skills",
-      to: "skills",
-      title: "Habilidades",
-      offset: -2,
-    },
-    {
-      key: "projects",
-      to: "projects",
-      title: "Proyectos",
-      offset: -1,
-    },
-    {
-      key: "contact",
-      to: "contact",
-      title: "Contacto",
-      offset: -1,
-    },
-  ];
+  const { translateText, setEnglish } = useEnglishTranslate();
 
   return (
     <nav className="fixed z-20 border-b bg-white w-full dark:bg-slate-900 dark:border-b-gray-700 duration-500">
@@ -93,6 +90,7 @@ const Navbar = ({
                   {navItems.map(({ key, to, title, offset }, i) => (
                     <li key={key}>
                       <Link
+                        href={`#${to}`}
                         activeStyle={{ color: "#C026D3" }}
                         spy={true}
                         to={to}
@@ -103,7 +101,8 @@ const Navbar = ({
                         className="group relative cursor-pointer before:absolute before:inset-x-0 before:bottom-0 before:h-[6px] before:rounded-xl before:origin-right before:scale-x-0 before:bg-fuchsia-200 before:transition before:duration-300 hover:before:origin-left hover:before:scale-x-100 dark:before:bg-fuchsia-900"
                       >
                         <span className="relative group-hover:text-fuchsia-600 dark:group-hover:text-fuchsia-400 lg:text-base xl:text-xl">
-                          {englishTranslate[i] || title}
+                          {(translateText && translateText?.navbarOptions[i]) ||
+                            title}
                         </span>
                       </Link>
                     </li>
@@ -116,13 +115,13 @@ const Navbar = ({
                       src={englishIcon}
                       alt="english-language"
                       className="h-8 w-full cursor-pointer hover:scale-125 duration-300"
-                      onClick={() => toggleEnglishTranslate(true)}
+                      onClick={() => setEnglish(true)}
                     />
                     <img
                       src={spanishIcon}
                       alt="spanish-language"
                       className="h-8 w-full cursor-pointer hover:scale-125 duration-300"
-                      onClick={() => toggleEnglishTranslate(false)}
+                      onClick={() => setEnglish(false)}
                     />
                   </div>
                 </div>

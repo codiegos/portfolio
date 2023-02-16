@@ -1,13 +1,16 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 import mario from "../assets/images/mario.gif";
+import { useEnglishTranslate } from "../hooks/useTranslate";
 
-const About = ({ englishTranslate }) => {
+const About = () => {
+  const { translateText } = useEnglishTranslate();
+  const { about } = translateText;
   return (
     <div className="h-full flex flex-col justify-center relative">
       <h1 className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
         <Fade cascade duration={185}>
-          {englishTranslate.title || "¡Hola!"}
+          {about?.title || "¡Hola!"}
         </Fade>
         <span className="inline-block animate-wave">🖐️</span>
       </h1>
@@ -18,7 +21,7 @@ const About = ({ englishTranslate }) => {
           duration={1500}
         >
           <p>
-            {englishTranslate.whoIm ||
+            {about?.whoIm ||
               "Me llamo Diego Sebastián Rivera, tengo 22 años y soy Analista Programador. Terminé una parte de mi carrera como profesional el año 2022, abriéndome paso para entrar a desarrollarme como programador y futuro Ingeniero"}
             .
           </p>
@@ -29,7 +32,7 @@ const About = ({ englishTranslate }) => {
           direction="left"
         >
           <p>
-            {englishTranslate.howIm ||
+            {about?.whoIm ||
               "Me considero tolerante y flexible, me adecúo a los nuevos ambientes y me siento cómodo trabajando en diferentes modalidades"}
             .
           </p>
@@ -37,7 +40,7 @@ const About = ({ englishTranslate }) => {
         <Fade direction="left" duration={2000}>
           <div className="hidden xs:flex items-center justify-between sm:justify-evenly border p-4 bg-gradient-to-t from-fuchsia-50 to-blue-50 rounded-lg dark:bg-linear-soft-dark dark:bg-cover dark:bg-left-bottom dark:border-gray-700">
             <p>
-              {englishTranslate.hobbie ||
+              {about?.hobbie ||
                 "Suelo jugar videojuegos en mis tiempos libres e intento aprender programación e inglés todos los días"}
               .
             </p>
