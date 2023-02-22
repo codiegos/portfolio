@@ -29,7 +29,7 @@ const Home = () => {
           alt="my-profile-picture"
         />
       </div>
-      <Fade >
+      <Fade className="hidden sm:block">
         <Link
           to="about"
           smooth
