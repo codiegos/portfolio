@@ -9,7 +9,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40 duration-500"
+      className="h-screen duration-500"
     >
       <div className="h-full flex flex-col justify-center relative">
         <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">

@@ -26,7 +26,7 @@ const Contact = () => {
     toast(contact?.toastMessage || "Correo copiado en el portapapeles!", {
       position: toast.POSITION.BOTTOM_RIGHT,
       className:
-        "dark:bg-slate-900 dark:text-white rounded-sm border border-sky-400 sm:mb-20",
+        "dark:bg-slate-900 rounded-sm border border-sky-400 sm:mb-20",
     });
     handlePaperPlaneClick();
   };
@@ -34,7 +34,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:text-white dark:bg-linear-soft-dark dark:selection:bg-indigo-500/40 duration-500 flex flex-col"
+      className="h-screen duration-500 flex flex-col"
     >
       <div className="flex flex-col justify-center items-center flex-grow h-full relative">
         <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">

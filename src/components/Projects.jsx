@@ -28,7 +28,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="h-screen dark:text-white dark:bg-slate-900 dark:selection:bg-indigo-500/25 duration-500"
+      className="h-screen bg-white dark:bg-slate-900 duration-500"
     >
       <div className="h-full flex flex-col justify-center relative">
         <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">

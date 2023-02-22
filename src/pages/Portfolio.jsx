@@ -25,11 +25,11 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className={`font-mono  ${darkMode ? "dark" : ""}`}>
+    <div className={`font-mono   ${darkMode ? "dark" : ""}`}>
       <header>
         <Navbar toggleDarkMode={handleDarkMode} />
       </header>
-      <main>
+      <main className="dark:text-white bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:bg-linear-soft-dark dark:selection:bg-indigo-500/40">
         <Home />
         <About />
         <Skills />
