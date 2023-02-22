@@ -6,7 +6,10 @@ import { useEnglishTranslate } from "../hooks/useTranslate";
 const Home = () => {
   const { translateText } = useEnglishTranslate();
   return (
-    <>
+    <section
+      id="home"
+      className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed font-semibold shadow-sm dark:bg-linear-soft-dark dark:text-white dark:selection:bg-indigo-500/40 duration-500"
+    >
       <div className="flex flex-col md:flex-row items-center justify-around h-full">
         <div className="flex flex-col text-3xl xs:text-5xl md:text-6xl lg:text-7xl gap-y-3 text-center mt-4">
           <Fade cascade duration={185}>
@@ -26,7 +29,7 @@ const Home = () => {
           alt="my-profile-picture"
         />
       </div>
-      <Fade direction="down">
+      <Fade >
         <Link
           to="about"
           smooth
@@ -40,7 +43,7 @@ const Home = () => {
           />
         </Link>
       </Fade>
-    </>
+    </section>
   );
 };
 

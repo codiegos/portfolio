@@ -26,84 +26,89 @@ const Projects = () => {
   const repositoryText = projects?.repository || "Ver repositorio";
 
   return (
-    <div className="h-full flex flex-col justify-center relative">
-      <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
-        <h1 className="after:content-['💻']">
-          <Fade cascade duration={185}>
-            {projects?.title || "Proyectos"}
-          </Fade>
-        </h1>
-        <h2 className="hidden xl:inline-block text-3xl">
-          <Fade cascade duration={70}>
-            {projects?.subtitle || "Algunos de mis proyectos destacados:"}
-          </Fade>
-        </h2>
-      </div>
+    <section
+      id="projects"
+      className="h-screen dark:text-white dark:bg-slate-900 dark:selection:bg-indigo-500/25 duration-500"
+    >
+      <div className="h-full flex flex-col justify-center relative">
+        <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
+          <h1 className="after:content-['💻']">
+            <Fade cascade duration={185}>
+              {projects?.title || "Proyectos"}
+            </Fade>
+          </h1>
+          <h2 className="hidden xl:inline-block text-3xl">
+            <Fade cascade duration={70}>
+              {projects?.subtitle || "Algunos de mis proyectos destacados:"}
+            </Fade>
+          </h2>
+        </div>
 
-      <div className="flex flex-col items-center justify-center text-xs lg:text-xl gap-y-6 lg:flex-row gap-x-4 pt-24 relative">
-        <Fade
-          className="absolute z-10 top-0 mt-[84px] mr-4 animate-pulse"
-          direction="left"
-          duration={1750}
-        >
-          <img
-            src={handPointerIcon}
-            alt="hand-pointer-icon"
-            className="h-8 w-8 animate-bounce"
-          />
-        </Fade>
-        <Fade direction="left" duration={1750}>
-          <img
-            src={turicuentroGif}
-            alt="reservation-project"
-            className="p-[2px] bg-gray-200 dark:bg-gray-500 rounded-xl h-full w-full sm:h-80 lg:h-full cursor-pointer hover:animate-pulse hover:scale-[1.01]"
-            loading="lazy"
-            onClick={() =>
-              setOpenModal({
-                id: "turicuentro",
-                visible: true,
-                repository: "https://github.com/ariverak/turicuentro-admin",
-              })
-            }
-          />
-        </Fade>
-        <Fade direction="left" duration={1500}>
-          <img
-            src={djangoShopGif}
-            alt="django-shop-project"
-            className="p-[2px] bg-gray-200 dark:bg-gray-500 rounded-xl h-full w-full sm:h-80 lg:h-full cursor-pointer hover:animate-pulse hover:scale-[1.01]"
-            loading="lazy"
-            onClick={() =>
-              setOpenModal({
-                id: "djangoShop",
-                visible: true,
-                repository: "https://github.com/diego-zack/carrito-django",
-              })
-            }
-          />
-        </Fade>
+        <div className="flex flex-col items-center justify-center text-xs lg:text-xl gap-y-6 lg:flex-row gap-x-4 pt-24 relative">
+          <Fade
+            className="absolute z-10 top-0 mt-[84px] mr-4 animate-pulse"
+            direction="left"
+            duration={1750}
+          >
+            <img
+              src={handPointerIcon}
+              alt="hand-pointer-icon"
+              className="h-8 w-8 animate-bounce"
+            />
+          </Fade>
+          <Fade direction="left" duration={1750}>
+            <img
+              src={turicuentroGif}
+              alt="reservation-project"
+              className="p-[2px] bg-gray-200 dark:bg-gray-500 rounded-xl h-full w-full sm:h-80 lg:h-full cursor-pointer hover:animate-pulse hover:scale-[1.01]"
+              loading="lazy"
+              onClick={() =>
+                setOpenModal({
+                  id: "turicuentro",
+                  visible: true,
+                  repository: "https://github.com/ariverak/turicuentro-admin",
+                })
+              }
+            />
+          </Fade>
+          <Fade direction="left" duration={1500}>
+            <img
+              src={djangoShopGif}
+              alt="django-shop-project"
+              className="p-[2px] bg-gray-200 dark:bg-gray-500 rounded-xl h-full w-full sm:h-80 lg:h-full cursor-pointer hover:animate-pulse hover:scale-[1.01]"
+              loading="lazy"
+              onClick={() =>
+                setOpenModal({
+                  id: "djangoShop",
+                  visible: true,
+                  repository: "https://github.com/diego-zack/carrito-django",
+                })
+              }
+            />
+          </Fade>
+        </div>
+        <Modal
+          open={openModal.visible}
+          text={
+            <>
+              <span>
+                {openModal.id === "turicuentro"
+                  ? turicuentroText
+                  : djangoShopText}
+              </span>{" "}
+              <a
+                href={openModal.repository}
+                className="text-sky-400 underline duration-100 hover:text-sky-600"
+              >
+                {repositoryText}
+              </a>
+              .
+            </>
+          }
+          onClose={() => setOpenModal({ visible: false })}
+        />
       </div>
-      <Modal
-        open={openModal.visible}
-        text={
-          <>
-            <span>
-              {openModal.id === "turicuentro"
-                ? turicuentroText
-                : djangoShopText}
-            </span>{" "}
-            <a
-              href={openModal.repository}
-              className="text-sky-400 underline duration-100 hover:text-sky-600"
-            >
-              {repositoryText}
-            </a>
-            .
-          </>
-        }
-        onClose={() => setOpenModal({ visible: false })}
-      />
-    </div>
+    </section>
   );
 };
 

@@ -8,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Fade } from "react-awesome-reveal";
 import { useEnglishTranslate } from "../hooks/useTranslate";
+import ContactFooter from "./ContactFooter";
 
 const Contact = () => {
   const [animatePaperPlane, setAnimatePaperPlane] = useState(true);
@@ -31,7 +32,10 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <section
+      id="contact"
+      className="h-screen bg-linear-soft bg-no-repeat bg-cover bg-center bg-fixed dark:text-white dark:bg-linear-soft-dark dark:selection:bg-indigo-500/40 duration-500 flex flex-col"
+    >
       <div className="flex flex-col justify-center items-center flex-grow h-full relative">
         <div className="text-center text-4xl sm:text-5xl absolute inset-0 top-24">
           <h1 className="after:content-['📫']">
@@ -104,13 +108,15 @@ const Contact = () => {
           </button>
         </div>
       </div>
+      <ContactFooter />
+
       <ToastContainer
         position="bottom-right"
         autoClose={1800}
         pauseOnFocusLoss={false}
         pauseOnHover={false}
       />
-    </>
+    </section>
   );
 };
 
